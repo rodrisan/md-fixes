@@ -6,7 +6,7 @@ $(function(){
         $('.cfData:contains("[MERGE]")').css('background-color', '#6e5494');
         $('.cfData:contains("[MERGE]")').css('color', '#ffffff');
         // Pull-request highlight
-        $('.cfData:contains("[PR]")').css('background-color', '#6cc644');
+        $('.cfData:contains("PR")').css('background-color', '#6cc644');
         var regex = new RegExp("https://github.com/.*/.*/pull/[0-9]."); // expression here
         var $cfData = $(".cfData").filter(function () {
             return regex.test($(this).text());
@@ -67,6 +67,8 @@ $(function(){
             case 'TXT':
             case 'sql':
             case 'SQL':
+            case 'log':
+            case 'LOG':
                 $('embed').changeElementType('iframe');
                 var $content = $('iframe');
                 break;
@@ -110,7 +112,7 @@ $(function(){
                     if (n.nodeType == 3) {
                         var html = $.trim(n.nodeValue);
                         if (html) {
-                            html = html.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(url1, '$1<a href="http://$2">$2</a>$3').replace(url2, '$1<a href="$2">$2</a>$5');
+                            html = html.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(url1, '$1<a href="http://$2">$2</a>$3').replace(url2, '$1<a target="_blank" href="$2">$2</a>$5');
                             $(n).after(html).remove();
                         }
                     } else if (n.nodeType == 1 && !/^(a|button|textarea)$/i.test(n.tagName)) {
