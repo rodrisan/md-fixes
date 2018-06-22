@@ -1,6 +1,33 @@
 $(function(){
 
     (function($) {
+
+        function get_report(){
+
+            var ids = ['#slItemProject619', '#slItemProject259', '#slItemProject302', '#slItemProject181', '#slItemProject359', '#slItemProject92', '#slItemProject218', '#slItemProject609', '#slItemProject288', '#slItemProject393', '#slItemProject612', '#slItemProject611', '#slItemProject401', '#slItemProject208', '#slItemProject512', '#slItemProject570',  '#slItemResponsible178', '#slItemResponsible691', '#slItemResponsible42', '#slItemResponsible542', '#slItemResponsible545', '#slItemResponsible492', '#slItemResponsible358', '#slItemResponsible678', '#slItemResponsible561', '#slItemResponsible633','#slItemResponsible634', '#slItemResponsible179', '#slItemResponsible703'];
+
+            $.each(ids, function( index, value ) {
+                var currentElem = $(value);
+                console.debug(currentElem)
+                $(currentElem).click();
+            });
+
+            $('#daysField').val(6);
+
+            $('.form-horizontal button').click();
+
+        }
+
+        if(window.location.href.indexOf("actividad") > -1) {
+            get_report();
+        }
+        else if(window.location.href.indexOf("obstaculo") > -1) {
+            get_report();
+        }
+        else if(window.location.href.indexOf("comprometida") > -1) {
+            get_report();
+        }
+
         $('.cfData:contains("[DD]")').css('background-color', 'yellowgreen');
         $('.cfData:contains("[DP]")').css('background-color', 'yellowgreen');
         $('.cfData:contains("[MERGE]")').css('background-color', '#6e5494');
