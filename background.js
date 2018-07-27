@@ -28,6 +28,10 @@ $(function(){
             get_report();
         }
 
+        $(document).ready(function() {
+            $('select').select2();
+        });
+
         $('.cfData:contains("[DD]")').css('background-color', 'yellowgreen');
         $('.cfData:contains("[DP]")').css('background-color', 'yellowgreen');
         $('.cfData:contains("[MERGE]")').css('background-color', '#6e5494');
