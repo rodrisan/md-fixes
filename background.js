@@ -29,7 +29,7 @@ $(function(){
         }
 
         $(document).ready(function() {
-            $('select').select2();
+            $('select[name=projectId], select[name=userId]').select2();
         });
 
         $('.cfData:contains("[DD]")').css('background-color', 'yellowgreen');
