@@ -29,7 +29,8 @@ $(function(){
         }
 
         $(document).ready(function() {
-            $('select[name=projectId], select[name=userId]').select2();
+            // Select2 for /planTrabajo
+            $('#projectForm select[name=projectId], #projectForm select[name=userId]').select2();
         });
 
         $('.cfData:contains("[DD]")').css('background-color', 'yellowgreen');
