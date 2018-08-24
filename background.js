@@ -326,6 +326,11 @@ $(function(){
         $('.ntRevission').text("");
         $('.ntRevissionLess24h').append(revissionCountLess24h);
         $('.ntRevissionMore48h').append(revissionCountMore24h);
+
+        $('#responsibleWrapper').prev().hide();
+        $('#responsibleWrapper').hide();
+        $('#inactiveWrapper').prev().hide();
+        $('#inactiveWrapper').hide();
     }, 1000);
 
 });
